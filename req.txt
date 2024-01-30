@@ -1,4 +1,3 @@
-# ここは各マシーンに合わせて
 torch
 torchvision
 torchaudio

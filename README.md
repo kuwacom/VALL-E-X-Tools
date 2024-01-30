@@ -46,6 +46,10 @@ python3 -m venv venv
 ```bash
 pip install -r req-cuda-12.1.txt
 ```
+torch類は https://pytorch.org/get-started/locally/ より手動で入れます
+```bash
+pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
+```
 > CUDA 12.1
 ```bash
 pip install -r req.txt
