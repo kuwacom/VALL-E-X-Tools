@@ -13,7 +13,7 @@ https://github.com/Plachtaa/VALL-E-X
 
 `customs` `data` `images` `models` `modules` `nltk_data` `prompts` `utils` `whisper`
 
-の系 9フォルダです
+の計9フォルダです
 
 ## Python環境の作成
 ### 仮想環境の作成
