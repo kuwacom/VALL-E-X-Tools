@@ -1,6 +1,9 @@
 # python venv
 venv
 
+# python system file
+__pycache__
+
 # model
 checkpoints
 whisper
