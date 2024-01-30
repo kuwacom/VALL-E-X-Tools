@@ -1,0 +1,17 @@
+# python venv
+venv
+
+# model
+checkpoints
+whisper
+
+# VALL-E-X Source Code
+customs
+data
+images
+models
+modules
+nltk_data
+presets
+prompts
+utils
