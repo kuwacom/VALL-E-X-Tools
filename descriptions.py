@@ -1,31 +1,30 @@
 top_md = """
 # VALL-E X  
-VALL-E X can synthesize high-quality personalized speech with only a 3-second enrolled recording of 
-an unseen speaker as an acoustic prompt, even in another language for a monolingual speaker.<br>
-This implementation supports zero-shot, mono-lingual/cross-lingual text-to-speech functionality of three languages (English, Chinese, Japanese)<br>  
-See this [demo](https://plachtaa.github.io/) page for more details.
+VALL-E X は3秒間の入力音声を音響プロンプトとして利用して高品質な音声を合成することができます。<br>
+このプロジェクトは、ゼロショット3言語(英語、中国語、日本語)のモノリンガル/クロスリンガル音声合成機能をサポートしています。<br>
+詳しくはこの[デモ](https://plachtaa.github.io/)ページをご覧ください。
 """
 
 infer_from_audio_md = """
-Upload a speech of 3~10 seconds as the audio prompt and type in the text you'd like to synthesize.<br>
-The model will synthesize speech of given text with the same voice of your audio prompt.<br>
-The model also tends to preserve the emotion & acoustic environment of your given speech.<br>
-For faster inference, please use **"Make prompt"** to get a `.npz` file as the encoded audio prompt, and use it by **"Infer from prompt"**
+音声プロンプトとして、3~10秒の音声をアップロードして合成したいテキストを入力してください。<br>
+モデルは入力された音声の声質と同じ音声を出力します。<br>
+また、このモデルは入力音声の感情や音響環境に似る傾向があります。<br>
+より高速に推論を行うには、**"プロンプトを作成"**よりプロンプトを作成してファイル(`.npz`)をダウンロードし、**"プロンプトから推論"**より推論してください。
 """
 
 make_prompt_md = """
-Upload a speech of 3~10 seconds as the audio prompt.<br>
-Get a `.npz` file as the encoded audio prompt. Use it by **"Infer with prompt"**
+音声プロンプトとして、3~10秒の音声をアップロードしてください。<br>
+より高速に推論を行うには、***"プロンプトを作成"**よりプロンプトを作成してファイル(`.npz`)をダウンロードし、**"プロンプトから推論"**より推論してください。
 """
 
 infer_from_prompt_md = """
-Faster than **"Infer from audio"**.<br>
-You need to **"Make prompt"** first, and upload the encoded prompt (a `.npz` file)
+**"音声から推論"**より高速に動作します！<br>
+これを使うにはまず、**"プロンプトを作成"**よりプロンプトを作成してファイル(`.npz`)をアップロードしてください。
 """
 
 long_text_md = """
-Very long text is chunked into several sentences, and each sentence is synthesized separately.<br>
-Please make a prompt or use a preset prompt to infer long text.
+長文の推論は、いくつかの文章に分割してそれぞれを別々に合成します。<br>
+defaultプロンプトを利用するか **"プロンプトを作成"**よりプロンプトを作成してファイル(`.npz`)をアップロードしてください。
 """
 
-long_text_example = "Just a few years ago, there were no legions of deep learning scientists developing intelligent products and services at major companies and startups. When we entered the field, machine learning did not command headlines in daily newspapers. Our parents had no idea what machine learning was, let alone why we might prefer it to a career in medicine or law. Machine learning was a blue skies academic discipline whose industrial significance was limited to a narrow set of real-world applications, including speech recognition and computer vision. Moreover, many of these applications required so much domain knowledge that they were often regarded as entirely separate areas for which machine learning was one small component. At that time, neural networks—the predecessors of the deep learning methods that we focus on in this book—were generally regarded as outmoded."
+long_text_example = "ほんの数年前まで、大手企業や新興企業でインテリジェントな製品やサービスを開発するディープラーニングの科学者たちはいなかった。私たちがこの分野に入ったとき、機械学習は日々の新聞の見出しを飾ることはなかった。私たちの両親は、機械学習が何なのか、ましてや医学や法律のキャリアよりも機械学習を好む理由など知らなかった。機械学習は青空の下での学問分野であり、その産業的意義は、音声認識やコンピューター・ビジョンなど、現実世界での狭いアプリケーションに限られていた。さらに、これらのアプリケーションの多くは、非常に多くの領域知識を必要とするため、機械学習はその小さな構成要素のひとつであり、まったく別の分野とみなされることが多かった。当時、ニューラルネットワーク（本書で取り上げるディープラーニング手法の前身）は、一般的に時代遅れと見なされていた。"
