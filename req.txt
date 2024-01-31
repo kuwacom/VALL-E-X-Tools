@@ -22,4 +22,6 @@ nltk
 sudachipy
 sudachidict_core
 vocos
+
 ipython
+ipykernel
