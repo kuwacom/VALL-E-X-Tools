@@ -1,6 +1,9 @@
 # What Is This
 VALL-E-X 用のツール類
 
+フォークした日本語版もあります
+https://github.com/kuwacom/VALL-E-X-JP
+
 # How To Use
 以下本家リポジトリを参考に進めていきます
 https://github.com/Plachtaa/VALL-E-X
