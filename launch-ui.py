@@ -8,6 +8,7 @@ import tempfile
 import platform
 import webbrowser
 import sys
+import json
 print(f"default encoding is {sys.getdefaultencoding()},file system encoding is {sys.getfilesystemencoding()}")
 print(f"You are using Python version {platform.python_version()}")
 if(sys.version_info[0]<3 or sys.version_info[1]<7):
@@ -332,8 +333,17 @@ def infer_from_prompt(text, language, accent, preset_prompt, prompt_file):
     text_prompts = torch.tensor(text_prompts).type(torch.int32)
 
     enroll_x_lens = text_prompts.shape[-1]
-    logging.info(f"synthesize text: {text}")
     phone_tokens, langs = text_tokenizer.tokenize(text=f"_{text}".strip())
+    
+    with open('./utils/g2p/bpe_69.json', 'r', encoding='utf-8') as f:
+        bpe_69 = json.load(f)
+    vocab_list = bpe_69['model']['vocab']
+    reverse_vocab_list = {value: key for key, value in vocab_list.items()}
+    phoneme_list = [reverse_vocab_list[num] for num in phone_tokens]
+    # 音素トークンを音素へ置き換えた物を表示
+    print('入力テキスト: ' + text)
+    print('出力音素: ' + ''.join(phoneme_list))
+
     text_tokens, text_tokens_lens = text_collater(
         [
             phone_tokens
@@ -359,7 +369,8 @@ def infer_from_prompt(text, language, accent, preset_prompt, prompt_file):
     features = vocos.codes_to_features(frames)
     samples = vocos.decode(features, bandwidth_id=torch.tensor([2], device=device))
 
-    model.to('cpu')
+    # model.to('cpu')
+    model.to("cuda:0")
     torch.cuda.empty_cache()
 
     message = f"sythesized text: {text}"
